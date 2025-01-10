@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "taller-3-frontend",
+    "stage1": "taller-3-frontend"
+  },
+  "targets": {},
+  "etags": {}
+}
