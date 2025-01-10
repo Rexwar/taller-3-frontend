@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Clonar el código del repositorio
+      # Paso 1: Clonar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -24,17 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Actualizar Browserslist (opcional pero recomendado)
-      - name: Update Browserslist DB
-        run: npx update-browserslist-db@latest
-
-      # Paso 5: Construir el proyecto
-      # Desactiva process.env.CI para evitar errores por advertencias
+      # Paso 4: Construir el proyecto
       - name: Build project
-        run: |
-          CI=false npm run build
+        run: npm run build
 
-      # Paso 6: Desplegar en Firebase Hosting
+      # Paso 5: Desplegar en Firebase Hosting
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v2.2.0
         with:
